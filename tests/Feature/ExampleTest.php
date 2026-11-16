@@ -2,18 +2,18 @@
 
 namespace Tests\Feature;
 
-// use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class ExampleTest extends TestCase
 {
     /**
-     * A basic test example.
+     * Route "/" selalu redirect ke halaman login (atau dashboard jika sudah login).
+     * Status 302 adalah perilaku yang benar sesuai desain TirtaWarga.
      */
-    public function test_the_application_returns_a_successful_response(): void
+    public function test_root_mengarahkan_tamu_ke_halaman_login(): void
     {
         $response = $this->get('/');
 
-        $response->assertStatus(200);
+        $response->assertRedirect(route('login'));
     }
 }

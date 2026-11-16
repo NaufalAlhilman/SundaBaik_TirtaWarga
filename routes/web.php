@@ -37,9 +37,10 @@ Route::middleware(['auth', EnsureRole::class . ':rt'])
     ->name('rt.')
     ->group(function () {
         Route::get('/', [RtDashboardController::class, 'index'])->name('dashboard');
-        Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');                // PBI-04
-        Route::post('/laporan', [LaporanController::class, 'store'])->name('laporan.store');
-        Route::get('/laporan/{laporan:kode}', [LaporanController::class, 'show'])->name('laporan.show');   // PBI-05
+        Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');                       // PBI-04
+        Route::get('/laporan/buat', [LaporanController::class, 'create'])->name('laporan.create');             // PBI-34
+        Route::post('/laporan', [LaporanController::class, 'store'])->name('laporan.store');                   // PBI-07, PBI-09
+        Route::get('/laporan/{laporan:kode}', [LaporanController::class, 'show'])->name('laporan.show');       // PBI-05
     });
 
 use App\Http\Controllers\PenetapanBantuanController;

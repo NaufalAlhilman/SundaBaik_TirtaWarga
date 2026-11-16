@@ -26,10 +26,10 @@
             ['label' => 'Verifikasi Pengiriman', 'route' => null,             'icon' => 'check'],
         ]
         : [
-            ['label' => 'Ringkasan',       'route' => 'rt.dashboard',     'icon' => 'grid'],
-            ['label' => 'Kirim Laporan',   'route' => null,               'icon' => 'send'],
-            ['label' => 'Riwayat Laporan', 'route' => 'rt.laporan.index', 'icon' => 'list', 'active' => ['rt.laporan.index', 'rt.laporan.show']],
-            ['label' => 'Notifikasi',      'route' => null,               'icon' => 'bell', 'badge' => 2],
+            ['label' => 'Ringkasan',       'route' => 'rt.dashboard',      'icon' => 'grid'],
+            ['label' => 'Kirim Laporan',   'route' => 'rt.laporan.create', 'icon' => 'send'],
+            ['label' => 'Riwayat Laporan', 'route' => 'rt.laporan.index',  'icon' => 'list', 'active' => ['rt.laporan.index', 'rt.laporan.show']],
+            ['label' => 'Notifikasi',      'route' => null,                'icon' => 'bell', 'badge' => 2],
         ];
 
     $words = preg_split('/\s+/', trim($user->name));
